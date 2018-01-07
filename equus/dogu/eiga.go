@@ -18,7 +18,7 @@ const (
 
 func EigaHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Println(r)
-    http.ServeFIle(w,r,EIGA)
+    http.ServeFile(w,r,EIGA)
 }
 
 func ListHandler(w http.ResponseWriter, r *http.Request) {
