@@ -45,7 +45,9 @@ func Pop() {
         fmt.Println(err)
     }
     for index, name := range Images {
-        fmt.Printf("File #%d:  %s\n", index, name)
+        fmt.Printf("Select the file number to sample\n")
+        fmt.Printf("\n(%d):  %s\n", index, name)
+        fmt.Printf("\nPress input key:\n> ")
     }
 }
 
