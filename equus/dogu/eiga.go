@@ -6,9 +6,12 @@
 package main
 
 import (
+    "bufio"
     "fmt"
     "net/http"
     "os"
+    "strconv"
+    "strings"
     "time"
 )
 
@@ -44,11 +47,18 @@ func Pop() {
     if err != nil {
         fmt.Println(err)
     }
+    r0 := bufio.NewReader(os.Stdin)
     for index, name := range Images {
         fmt.Printf("Select the file number to sample\n")
         fmt.Printf("\n(%d):  %s\n", index, name)
         fmt.Printf("\nPress input key:\n> ")
     }
+    s0, _ := r0.ReadString('\n')
+    fmt.Printf(s0)
+    s1 := strings.TrimSuffix(s0, "\n")
+    fmt.Println(s1)
+    i0, _ := strconv.Atoi(s1)
+    fmt.Println(i0, Images[i0])
 }
 
 func main() {
