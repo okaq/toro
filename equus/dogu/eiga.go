@@ -17,6 +17,7 @@ import (
 
 var (
     Images []string
+    Index int
 )
 
 const (
@@ -54,11 +55,14 @@ func Pop() {
         fmt.Printf("\nPress input key:\n> ")
     }
     s0, _ := r0.ReadString('\n')
-    fmt.Printf(s0)
+    // fmt.Printf(s0)
     s1 := strings.TrimSuffix(s0, "\n")
-    fmt.Println(s1)
+    // fmt.Println(s1)
     i0, _ := strconv.Atoi(s1)
-    fmt.Println(i0, Images[i0])
+    // fmt.Println(i0, Images[i0])
+    Index = i0
+    fmt.Printf("Input key pressed is: %d. File to be sampled: %s\n", i0, Images[i0])
+    fmt.Println("File input saved. Ready to begin web serving...")
 }
 
 func main() {
