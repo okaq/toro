@@ -29,6 +29,16 @@ var g = {
             var t0 = window.performance.now();
             console.log("start equus...");
 
+            // state
+            // 0: user input image file
+            // 1: render to canvas
+            // 2: click to sample
+            // 3: sampler chooses threshold
+            // 4: display sampled data
+            // 5: send data to server
+            // 6: save to disk
+            // 7: confirmation
+
             // stats
             console.log("total render time: " + (window.performance.now() - t0) + "ms.");
         }
