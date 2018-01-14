@@ -65,11 +65,17 @@ func Pop() {
     fmt.Println("File input saved. Ready to begin web serving...")
 }
 
+func SelectHandler(w http.ResponseWriter, r *http.Request) {
+    // write image file name
+    // as plain text string
+}
+
 func main() {
     fmt.Printf("okaq equus eiga start\n%s\n", time.Now().String())
     Pop()
     http.HandleFunc("/", EigaHandler)
     http.HandleFunc("/list", ListHandler)
+    http.HandleFunc("/a", SelectHandler)
     http.ListenAndServe(":8080", nil)
 }
 
