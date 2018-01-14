@@ -40,9 +40,27 @@ var g = {
             // 7: confirmation
             g.s = 0;
 
+            window.setTimeout(g.start, 1000);
+
             // stats
             console.log("total render time: " + (window.performance.now() - t0) + "ms.");
+        },
+        "start": function() {
+            // get the image fime name
+            xhr.file();
         }
+}
+// fetch
+var xhr = {
+    "file": function() {
+        // retrieve the file name
+        // selected by the user
+        // and write to the console
+        xhr.url = [];
+        xhr.url[0] = "http://localhost:8080/a";
+
+        console.log(window.fetch);
+    }
 }
         </script>
     </head>
