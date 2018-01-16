@@ -59,7 +59,14 @@ var xhr = {
         xhr.url = [];
         xhr.url[0] = "http://localhost:8080/a";
 
-        console.log(window.fetch);
+        // console.log(window.fetch);
+        window.fetch(xhr.url[0])
+         .then(function(response){
+             console.log(response);
+             return response.text();
+         }).then(function(text){
+             console.log(text);
+         })
     }
 }
         </script>

@@ -44,7 +44,7 @@ func Pop() {
     if err != nil {
         fmt.Println(err)
     }
-    Images, err := f0.Readdirnames(0)
+    Images, err = f0.Readdirnames(0)
     if err != nil {
         fmt.Println(err)
     }
@@ -68,6 +68,9 @@ func Pop() {
 func SelectHandler(w http.ResponseWriter, r *http.Request) {
     // write image file name
     // as plain text string
+    w.Header().Set("Content-type", "text/plain")
+    w.Write([]byte(Images[Index]))
+    // logging request interface
 }
 
 func main() {
