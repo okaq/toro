@@ -66,11 +66,23 @@ func Pop() {
 }
 
 func SelectHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(r)
     // write image file name
     // as plain text string
     w.Header().Set("Content-type", "text/plain")
     w.Write([]byte(Images[Index]))
     // logging request interface
+}
+
+func ImageHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(r)
+    // http.StripPrefix("/img/", http.FileServer(http.Dir(IMG)))
+    fmt.Println(r.URL.Path)
+    s0 := strings.Split(r.URL.Path, "/")
+    fmt.Println(s0)
+    s1 := fmt.Sprintf("%s/%s", IMG, s0[2])
+    fmt.Println(s1)
+    http.ServeFile(w,r,s1)
 }
 
 func main() {
@@ -79,6 +91,7 @@ func main() {
     http.HandleFunc("/", EigaHandler)
     http.HandleFunc("/list", ListHandler)
     http.HandleFunc("/a", SelectHandler)
+    http.HandleFunc("/img/", ImageHandler)
     http.ListenAndServe(":8080", nil)
 }
 
