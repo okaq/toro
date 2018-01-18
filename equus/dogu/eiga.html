@@ -46,8 +46,12 @@ var g = {
             console.log("total render time: " + (window.performance.now() - t0) + "ms.");
         },
         "start": function() {
-            // get the image fime name
+            // get the image file name
             xhr.file();
+        },
+        "pic": function() {
+            // retrieve the image blob
+            xhr.image();
         }
 }
 // fetch
@@ -68,11 +72,14 @@ var xhr = {
          }).then(function(text){
              console.log(text);
              xhr.img = text;
+
+             window.setTimeout(g.pic, 1000);
          })
     },
     "image": function() {
-        // get imag blob
-        window.fetch(xhr.url[1])
+        // get image blob
+        var f0 = xhr.url[1] + xhr.img;
+        window.fetch(f0)
          .then(function(response){
              console.log(response);
              return response.blob();
