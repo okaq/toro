@@ -61,7 +61,23 @@ var g = {
             // image dims
             console.log(xhr.pic.width, xhr.pic.height);
             sce.pom();
+        },
+        "elec": function() {
+            // pixel data
+            pic.data();
         }
+}
+// pixel
+var pic = {
+    "data": function() {
+        pic.a = sce.a.c.con.getImageData(0,0,1024,1024);
+        console.log(pic.a.data.length);
+    },
+    "bloc": function() {
+        // block size = 32x32
+        // return rgba indicies
+        // at block x,y
+    }
 }
 // scene
 var sce = {
@@ -70,7 +86,10 @@ var sce = {
         sce.a.r = [1024,1024,448,28];
         sce.a.c = dom.canvas(sce.a.r);
         dom.add(sce.a.c);
-        sce.a.c.drawImage(0,0,xhr.pic);
+        sce.a.c.con.drawImage(xhr.pic,0,0);
+        console.log("bitmap rendered. begining sample...");
+
+        window.setTimeout(g.elec, 1000);
     }
 }
 // fetch

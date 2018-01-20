@@ -85,6 +85,10 @@ func ImageHandler(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w,r,s1)
 }
 
+func SaveHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(r)
+}
+
 func main() {
     fmt.Printf("okaq equus eiga start\n%s\n", time.Now().String())
     Pop()
@@ -92,6 +96,7 @@ func main() {
     http.HandleFunc("/list", ListHandler)
     http.HandleFunc("/a", SelectHandler)
     http.HandleFunc("/img/", ImageHandler)
+    http.HandleFunc("/save", SaveHandler)
     http.ListenAndServe(":8080", nil)
 }
 
