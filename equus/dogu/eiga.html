@@ -90,7 +90,17 @@ var pic = {
         // return rgba indicies
         // at block x,y
         // pixel coordinates
-        // block coordinates
+        var x1 = (x0 * 32) >>> 0;
+        var y1 = (y0 * 32) >>> 0;
+        // index into pixel data
+        var i0 = ((y1 * 1024 * 4) + (x1 * 4)) >>> 0;
+        var b0 = [];
+        for (var y2 = 0; y2 < 32; y2++) {
+            for (var x2 = 0; x2 < 32; x2++) {
+
+            }
+        }
+        return b0;
 
     }
 }
