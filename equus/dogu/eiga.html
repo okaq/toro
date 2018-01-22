@@ -75,14 +75,18 @@ var pic = {
 
         pic.tab();
     },
-    "tab":function() {
+    "tab": function() {
         // tabulate thresholds
         pic.b = [];
         for (var y = 0; y < 32; y++) {
             for (var x = 0; x < 32; x++) {
                 var b0 = pic.bloc(x,y);
+                var t0 = pic.count(b0);
             }
         }
+    },
+    "count": function(b0) {
+        return 0;
     },
     "bloc": function(x0, y0) {
         // block size = 32x32
@@ -97,7 +101,12 @@ var pic = {
         var b0 = [];
         for (var y2 = 0; y2 < 32; y2++) {
             for (var x2 = 0; x2 < 32; x2++) {
-
+                var i1 = (i0 + (y2 * 1024 * 4)) >>> 0;
+                var i2 = (i1 + (x2 * 4)) >>> 0;
+                b0.push(i2+0);
+                b0.push(i2+1);
+                b0.push(i2+2);
+                b0.push(i2+3);
             }
         }
         return b0;
