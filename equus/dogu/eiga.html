@@ -86,7 +86,19 @@ var pic = {
         }
     },
     "count": function(b0) {
-        return 0;
+        // tally
+        // return count [0,1]
+        var r0 = [0,0];
+        for (var i = 0; i < b0; i++) {
+            var b1 = b0[i];
+            if (b1 == 0) {
+                r0[0] = r0[0] + 1;
+            }
+            if (b1 == 1) {
+                r0[1] = r0[1] + 1;
+            }
+        }
+        return r0;
     },
     "bloc": function(x0, y0) {
         // block size = 32x32
