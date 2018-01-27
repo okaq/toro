@@ -65,6 +65,25 @@ var g = {
         "elec": function() {
             // pixel data
             pic.data();
+
+            // start draw loop
+            window.setTimeout(g.pool, 1000);
+        },
+        "pool": function() {
+            // bitmap reveal
+            // one pixel block 32x32 per tick
+            g.tick = 0;
+            g.id = window.setInterval(g.toad, 1000);
+        },
+        "toad": function() {
+            console.log("tick count: " + g.tick);
+            if (g.tick >= 1024) {
+                window.clearInterval(g.id);
+                console.log("render complete");
+                return;
+            }
+            // draw next rect
+            g.tick = g.tick + 1;
         }
 }
 // pixel
