@@ -72,6 +72,9 @@ var g = {
         "pool": function() {
             // bitmap reveal
             // one pixel block 32x32 per tick
+            // clear canvas
+            sce.clear();
+            // loop
             g.tick = 0;
             g.id = window.setInterval(g.toad, 1000);
         },
@@ -172,6 +175,10 @@ var sce = {
         console.log("bitmap rendered. begining sample...");
 
         window.setTimeout(g.elec, 1000);
+    },
+    "clear": function() {
+        sce.a.c.con.fillStyle = rgba.css([255,255,255,1.0]);
+        sce.a.c.con.fillRect(0,0,sce.a.c.can.width,sce.a.c.can.height);
     }
 }
 // fetch
