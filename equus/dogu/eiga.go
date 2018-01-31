@@ -93,6 +93,10 @@ func ProcHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Println(r)
 }
 
+func StatHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(r)
+}
+
 func main() {
     fmt.Printf("okaq equus eiga start\n%s\n", time.Now().String())
     Pop()
@@ -102,6 +106,7 @@ func main() {
     http.HandleFunc("/img/", ImageHandler)
     http.HandleFunc("/save", SaveHandler)
     http.HandleFunc("/proc", ProcHandler)
+    http.HandleFunc("/stat", StatHandler)
     http.ListenAndServe(":8080", nil)
 }
 
