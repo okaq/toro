@@ -95,6 +95,9 @@ func ProcHandler(w http.ResponseWriter, r *http.Request) {
 
 func StatHandler(w http.ResponseWriter, r *http.Request) {
     fmt.Println(r)
+    // interface {type, value}
+    // pointer nil value is nothing
+    // not a memory address
 }
 
 func main() {
