@@ -100,6 +100,11 @@ func StatHandler(w http.ResponseWriter, r *http.Request) {
     // not a memory address
 }
 
+func TurnHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(r)
+    // begin new cycle
+}
+
 func main() {
     fmt.Printf("okaq equus eiga start\n%s\n", time.Now().String())
     Pop()
@@ -110,6 +115,7 @@ func main() {
     http.HandleFunc("/save", SaveHandler)
     http.HandleFunc("/proc", ProcHandler)
     http.HandleFunc("/stat", StatHandler)
+    http.HandleFunc("/turn", TurnHandler)
     http.ListenAndServe(":8080", nil)
 }
 

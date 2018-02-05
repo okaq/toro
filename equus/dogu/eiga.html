@@ -86,7 +86,8 @@ var g = {
                 return;
             }
             // draw next rect
-            ren.frame();
+            // ren.frame();
+            ren.frame2();
 
             g.tick = g.tick + 1;
 
@@ -244,6 +245,21 @@ var ren = {
             sce.a.c.con.fillStyle = rgba.css([255,255,255,1.0]);
         }
         sce.a.c.con.fillRect(x1, y1, 32, 32);
+    },
+    "frame2": function() {
+        var i0 = g.tick;
+        var x0 = g.tick % 32;
+        var y0 = (g.tick / 32) >>> 0;
+        var x1 = (x0 * 32) >>> 0;
+        var y1 = (y0 * 32) >>> 0;
+        // truth bit
+        if (pic.b[i0] == 1) {
+            sce.a.c.con.fillStyle = rgba.css([0,0,0,1.0]);
+        } else {
+            sce.a.c.con.fillStyle = rgba.css([255,255,255,1.0]);
+        }
+        sce.a.c.con.fillRect(x1, y1, 32, 32);
+        console.log("threshold value: " + pic.b[i0]);
     }
 }
 // dom
