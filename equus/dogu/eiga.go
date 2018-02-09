@@ -105,6 +105,12 @@ func TurnHandler(w http.ResponseWriter, r *http.Request) {
     // begin new cycle
 }
 
+func TunnelHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Println(r)
+    // simple ssh tunnel
+    // for secure data transfers
+}
+
 func main() {
     fmt.Printf("okaq equus eiga start\n%s\n", time.Now().String())
     Pop()
@@ -116,6 +122,7 @@ func main() {
     http.HandleFunc("/proc", ProcHandler)
     http.HandleFunc("/stat", StatHandler)
     http.HandleFunc("/turn", TurnHandler)
+    http.HandleFunc("/secret", TunnelHandler)
     http.ListenAndServe(":8080", nil)
 }
 
