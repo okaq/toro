@@ -126,6 +126,7 @@ var pic = {
                 var b0 = pic.bloc(x,y);
                 var t0 = pic.count(b0);
                 var c0 = pic.comp(t0);
+                console.log(t0);
                 var i0 = (y * 32) >>> 0;
                 var i1 = (i0 + x) >>> 0;
                 if (c0 == true) {
@@ -159,6 +160,28 @@ var pic = {
             }
         }
         return r0;
+    },
+    "count2": function(b0) {
+            // tally
+            // return count [0,1]
+            var r0 = [0,0];
+            for (var i = 0; i < b0; i++) {
+                var b1 = b0[i];
+                if (b1 == 0) {
+                    r0[0] = r0[0] + 1;
+                }
+                if (b1 == 1) {
+                    r0[1] = r0[1] + 1;
+                }
+            }
+            return r0;
+            // pushing pixels into the block
+            // as sequential rgba values
+            // but only counting the first one
+            // test 0 or 255
+            // no need to store so much data
+            // and we can count as we colllect
+            // pixel block sub array
     },
     "bloc": function(x0, y0) {
         // block size = 32x32
