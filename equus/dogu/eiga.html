@@ -127,7 +127,7 @@ var pic = {
                 // var t0 = pic.count(b0);
                 var t0 = pic.count2(b0);
                 var c0 = pic.comp(t0);
-                console.log(t0);
+                // console.log(t0);
                 var i0 = (y * 32) >>> 0;
                 var i1 = (i0 + x) >>> 0;
                 if (c0 == true) {
@@ -166,15 +166,18 @@ var pic = {
             // tally
             // return count [0,1]
             var r0 = [0,0];
-            for (var i = 0; i < b0; i++) {
+            for (var i = 0; i < b0.length; i++) {
                 var b1 = b0[i];
-                if (b1 == 0) {
+                var p0 = pic.a.data[b1];
+                if (p0 == 255) {
                     r0[0] = r0[0] + 1;
                 }
-                if (b1 == 1) {
+                if (p0 == 0) {
                     r0[1] = r0[1] + 1;
                 }
             }
+            console.log(pic.a.data[b0[0]]);
+            console.log(r0);
             return r0;
             // pushing pixels into the block
             // as sequential rgba values
