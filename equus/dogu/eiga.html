@@ -79,10 +79,12 @@ var g = {
             g.id = window.setInterval(g.toad, 100);
         },
         "toad": function() {
-            console.log("tick count: " + g.tick);
+            // console.log("tick count: " + g.tick);
             if (g.tick >= 1024) {
                 window.clearInterval(g.id);
                 console.log("render complete");
+                // send sample data
+                // to server for storage
                 return;
             }
             // draw next rect
@@ -176,8 +178,8 @@ var pic = {
                     r0[1] = r0[1] + 1;
                 }
             }
-            console.log(pic.a.data[b0[0]]);
-            console.log(r0);
+            // console.log(pic.a.data[b0[0]]);
+            // console.log(r0);
             return r0;
             // pushing pixels into the block
             // as sequential rgba values
@@ -302,7 +304,7 @@ var ren = {
             sce.a.c.con.fillStyle = rgba.css([255,255,255,1.0]);
         }
         sce.a.c.con.fillRect(x1, y1, 32, 32);
-        console.log("threshold value: " + pic.b[i0]);
+        // console.log("threshold value: " + pic.b[i0]);
     }
 }
 // dom
