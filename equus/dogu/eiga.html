@@ -85,6 +85,7 @@ var g = {
                 console.log("render complete");
                 // send sample data
                 // to server for storage
+                window.setTimeout(g.peace, 1000);
                 return;
             }
             // draw next rect
@@ -107,6 +108,9 @@ var g = {
         },
         "peace": function() {
             // round trip server status
+            console.log("sending bit sample data to server");
+            g.data = JSON.stringify(pic.b);
+            console.log(g.data);
         },
         "smile": function() {
             // go that extra mile
