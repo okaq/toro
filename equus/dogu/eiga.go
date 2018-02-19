@@ -86,6 +86,8 @@ func ImageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func SaveHandler(w http.ResponseWriter, r *http.Request) {
+    // recieve post data from client
+    // save as raw json and base64 encoded
     fmt.Println(r)
 }
 
