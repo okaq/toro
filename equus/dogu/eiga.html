@@ -303,6 +303,11 @@ var xhr = {
         var resp0 = function(response) {
             response.text().then(function(text){console.log(text);});
         }
+        // parse
+        var pars0 = function(text) {
+            console.log(text);
+            // if ok, render base64 json data 
+        }
         // fetch
         window.fetch(f0,p0).then(resp0).catch(err0);
         // preference fetch pattern
