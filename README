@@ -4,4 +4,22 @@ equus == nano game
 
 dogu/eiga == bitmap sampler
 
+end 03/01
+
+re-purpose existing sampler code
+for nextus nano instance
+
+original vision was for a
+minimum viable "io" type web game
+for the purpose of demonstrating
+cloud web gaming tech
+webrtc for peer net
+and websockets for udp client server comms
+minimal, fast json base64 bitmap monochrome graphics
+1fps performant procedural animation
+via bitwise manipulation of bitarray data
+
+theme "HORSE"
+basketball ballistics
+
 
